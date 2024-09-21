@@ -61,7 +61,7 @@ jobs:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       run: |
         npx sonar-scanner \
-          -Dsonar.projectKey=jacksonwc2 \
+          -Dsonar.projectKey=fiap-self-service \
           -Dsonar.organization="Jackson Willian Carbonera" \
           -Dsonar.sources=src \
           -Dsonar.host.url=https://sonarcloud.io \
