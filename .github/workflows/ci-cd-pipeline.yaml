@@ -96,7 +96,7 @@ jobs:
           aws-region: ${{ secrets.AWS_REGION }}
 
       - name: Update kube config
-        run: aws eks update-kubeconfig --name fiap-k8s-cluster --region us-east-1
+        run: aws eks update-kubeconfig --name fiap-self-service-k8s --region us-east-1
 
       - name: Deploy to EKS
         run: |
