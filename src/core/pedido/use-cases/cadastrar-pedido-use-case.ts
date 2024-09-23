@@ -44,7 +44,7 @@ export class CadastrarPedidoUseCase {
 
     const intencaoPagamento = await cadastrarIntencaoPagamentoUseCase.execute(intencaoPagamentoGateway, pagamentoClient, valorTotal)
 
-    const novoPedido = new Pedido(pedido.idCliente, pedido.combo, intencaoPagamento.id);
+    const novoPedido = new Pedido(pedido.idCliente, pedido.combo, intencaoPagamento.id.toHexString());
 
     return await pedidoGateway.salvarPedido(novoPedido);
   }
