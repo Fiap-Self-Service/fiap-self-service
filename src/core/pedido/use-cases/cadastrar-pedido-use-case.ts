@@ -46,6 +46,9 @@ export class CadastrarPedidoUseCase {
 
     const novoPedido = new Pedido(pedido.idCliente, pedido.combo, intencaoPagamento.id.toHexString());
 
-    return await pedidoGateway.salvarPedido(novoPedido);
+    const result = await pedidoGateway.salvarPedido(novoPedido);
+    await pedidoGateway.adicionarPedidoCache(result)
+
+    return result
   }
 }

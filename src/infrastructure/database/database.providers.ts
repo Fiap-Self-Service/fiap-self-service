@@ -1,4 +1,5 @@
-import { DataSource } from 'typeorm';
+import {DataSource} from 'typeorm';
+import {DynamoDB} from "aws-sdk";
 
 export const databaseProviders = [
   {
@@ -11,7 +12,7 @@ export const databaseProviders = [
         username: process.env.DATABASE_USERNAME,
         password: process.env.DATABASE_PASSWORD,
         database: process.env.DATABASE_DATABASE,
-        entities: [__dirname + '/../../core/**/*.entity{.ts,.js}'],//todo: nome da entity do mongo
+        entities: [__dirname + '/../../core/**/*.entity{.ts,.js}'],
         synchronize: true,
       });
 
@@ -33,5 +34,16 @@ export const databaseProviders = [
 
       return dataSource.initialize();
     },
+  },
+  {
+    provide: 'CACHE_DATA_SOURCE',
+    useFactory: async () => {
+      return new DynamoDB.DocumentClient({
+        region: process.env.DYNAMODB_REGION,
+        endpoint: process.env.DYNAMODB_ENDPOINT,
+        accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+        secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+      })
+    }
   }
 ];
