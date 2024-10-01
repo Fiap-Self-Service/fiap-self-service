@@ -29,6 +29,7 @@ export const databaseProviders = [
         username: process.env.DOCUMENT_DATABASE_USERNAME,
         password: process.env.DOCUMENT_DATABASE_PASSWORD,
         database: process.env.DOCUMENT_DATABASE_DATABASE,
+        authSource: 'admin',
         entities: [__dirname + '/../../core/**/*.entity.document{.ts,.js}']
       });
 
