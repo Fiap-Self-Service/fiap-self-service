@@ -33,6 +33,18 @@ O sistema tem como objetivo principal facilitar e otimizar o gerenciamento de pe
    - Gerenciamento dos pedidos.
 
 ## **Entregáveis**
+
+### ***Tech Challenge 3***
+
+- **Repositórios**
+
+    - Infraestrutura da API principal: https://github.com/Fiap-Self-Service/fiap-self-service
+    - Banco de Dados com Terraform: https://github.com/Fiap-Self-Service/fiap-self-service-database
+    - Infra Kubernetes com Terraform: https://github.com/Fiap-Self-Service/fiap-self-service-k8s
+    - Repositório Lambda: https://github.com/Fiap-Self-Service/fiap-self-service-lambda-cliente
+
+
+
 ### ***Tech Challenge 2***
 
 0. **Clean Architecture**
