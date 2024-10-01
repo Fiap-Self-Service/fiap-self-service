@@ -40,7 +40,9 @@ export const databaseProviders = [
     useFactory: async () => {
       return new DynamoDB.DocumentClient({
         region: process.env.DYNAMODB_REGION,
-        endpoint: process.env.DYNAMODB_ENDPOINT,
+        accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+        secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+        sessionToken: process.env.AWS_SESSION_TOKEN,
       })
     }
   }
