@@ -13,7 +13,7 @@ export class PedidoCacheRepository implements IPedidoCacheRepository {
 
     async listarPedidosAtivos(): Promise<any> {
         const params = {
-            TableName: 'Pedidos',
+            TableName: 'fiap-self-service-pedidos-ativos',
         }
 
         try {
@@ -26,7 +26,7 @@ export class PedidoCacheRepository implements IPedidoCacheRepository {
 
     async adicionarPedidoCache(pedido: PedidoEntity) {
         const params = {
-            TableName: 'Pedidos',
+            TableName: 'fiap-self-service-pedidos-ativos',
             Item: pedido,
         };
 
@@ -40,7 +40,7 @@ export class PedidoCacheRepository implements IPedidoCacheRepository {
 
     async removerPedidoCache(id: string) {
         const params = {
-            TableName: 'Pedidos',
+            TableName: 'fiap-self-service-pedidos-ativos',
             Key: {
                 id: id
             }
@@ -56,7 +56,7 @@ export class PedidoCacheRepository implements IPedidoCacheRepository {
 
     async atualizarStatusPedidoCache(id: string, novoStatus: string) {
         const params = {
-            TableName: 'Pedidos',
+            TableName: 'fiap-self-service-pedidos-ativos',
             Key: { pedidoId: id },
             UpdateExpression: `set #field = :value`,
             ExpressionAttributeNames: {
